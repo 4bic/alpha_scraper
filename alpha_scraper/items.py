@@ -10,5 +10,7 @@ import scrapy
 
 class AlphaScraperItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    titles = scrapy.Field()
+    prices = scrapy.Field()
+    images = scrapy.Field()
+    images_url = scrapy.Field()

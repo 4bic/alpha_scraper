@@ -21,14 +21,6 @@ NEWSPIDER_MODULE = 'alpha_scraper.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
-
-#Saving images
-ITEM_PIPELINES = {
-  'scrapy.pipelines.images.ImagesPipeline': 1
-}
-IMAGES_STORE = 'tmp/scrapped_data/images/'
-
-
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -72,9 +64,12 @@ IMAGES_STORE = 'tmp/scrapped_data/images/'
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'alpha_scraper.pipelines.AlphaScraperPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'alpha_scraper.pipelines.AlphaScraperPipeline': 300,
+   'scrapy.pipelines.images.ImagesPipeline': 1
+   
+}
+# IMAGES_STORE = 'tmp/scrapped_data/images/'
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

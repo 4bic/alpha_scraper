@@ -22,13 +22,14 @@ class Spyde1Spider(scrapy.Spider):
 
     #location of csv file
     custom_settings = {
-        'FEED_URI' : 'tmp/scrapped_data/images/jumia.csv'
+        'FEED_URI' : 'tmp/scrapped_data/data1.csv'
     }
 
     def parse(self, response):
         #Extracting the content using css selectors
         images = response.css("img.lazy.image::attr(data-src)").extract()
-        titles = response.css("img::attr(alt)").extract()
+        # titles = response.css("img::attr(alt)").extract()
+        titles = response.css("span.name::text").extract()
         prices = response.css("span::attr(data-price)").extract()
 
         for item in zip(titles,prices,images):
