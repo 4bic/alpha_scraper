@@ -22,7 +22,7 @@ class Spyde1Spider(scrapy.Spider):
 
     #location of csv file
     custom_settings = {
-        'FEED_URI' : 'tmp/scrapped_data/data1.csv'
+        'FEED_URI' : 'tmp/scrapped_data/data.csv'
     }
 
     def parse(self, response):
