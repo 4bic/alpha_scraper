@@ -6,15 +6,19 @@ class Spyde1Spider(scrapy.Spider):
     name = 'spyde1'
     allowed_domains =[]
     url = "www.jumia.co.ke/"
-    categories = ['women-s-fashion/','women-accessorie/','bags-accessories/',
-                  'womens-trousers-leggings/','womens-tops/','women-s-clothing/','women-s-shoes/',
-                  'womens-dresses/','womens-skirts/','heels/','lingerie-sleepwear/']
+    categories = ['bags-accessories','women-s-fashion','women-accessorie',
+                  'womens-trousers-leggings','womens-tops','women-s-clothing','women-s-shoes',
+                  'womens-dresses','womens-skirts','heels','lingerie-sleepwear']
     for category in categories:
         domain = url+category
         allowed_domains.append(domain)
 
-    start_urls = ['http://'+ domain for domain in allowed_domains]
-    # start_urls = ['http://www.jumia.co.ke/women-s-fashion/']
+    start_urls = []
+
+    for domain in allowed_domains:
+        for page in range(1,26,1):
+            items_page = 'http://'+domain+'?page='+str(page)
+            start_urls.append(items_page)
 
     #location of csv file
     custom_settings = {
