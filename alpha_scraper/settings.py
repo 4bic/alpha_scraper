@@ -21,6 +21,14 @@ NEWSPIDER_MODULE = 'alpha_scraper.spiders'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
+
+#Saving images
+ITEM_PIPELINES = {
+  'scrapy.pipelines.images.ImagesPipeline': 1
+}
+IMAGES_STORE = 'tmp/scrapped_data/images/'
+
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
