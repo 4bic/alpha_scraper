@@ -4,14 +4,17 @@ import scrapy
 
 class Spyde1Spider(scrapy.Spider):
     name = 'spyde1'
-    url = "https://www.jumia.co.ke/"
-    categories = ['bags-accessories/','women-s-fashion/','women-accessorie/',
+    allowed_domains =[]
+    url = "www.jumia.co.ke/"
+    categories = ['women-s-fashion/','women-accessorie/','bags-accessories/',
                   'womens-trousers-leggings/','womens-tops/','women-s-clothing/','women-s-shoes/',
                   'womens-dresses/','womens-skirts/','heels/','lingerie-sleepwear/']
     for category in categories:
-        allowed_domains = url + category
-    # allowed_domains = ['www.jumia.co.ke/women-s-fashion','www.jumia.co.ke/women-s-clothing',]
-    start_urls = ['http://www.jumia.co.ke/women-s-fashion/']
+        domain = url+category
+        allowed_domains.append(domain)
+
+    start_urls = ['http://'+ domain for domain in allowed_domains]
+    # start_urls = ['http://www.jumia.co.ke/women-s-fashion/']
 
     #location of csv file
     custom_settings = {
