@@ -1,8 +1,8 @@
 ## Alpha Scraper
 
-An instance of web crawler and scrapy created with [scrapy]()
-that was created to facilitate in doing a market reasearch on trending
-Women's apparell and accessories on sale from a prominent online shop
+An instance of a web crawler and scraping tool created with [scrapy](https://scrapy.org) library
+that was made to facilitate running a market research on trending
+Women's apparels and accessories on sale from a prominent online shop
 in Kenya.
 
-The data and Images obtained were solely for research pursoses.  
+The data and Images obtained were solely for research purposes.  
